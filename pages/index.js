@@ -12,13 +12,13 @@ export default function Home() {
       <main>
         <h1 className="title">
           Read{' '}
-          <Link href="/posts/first-post">
-            <a>this page!</a>
+          <Link href="/posts/the-origin">
+            <a>the origin!</a>
           </Link>
         </h1>
 
         <p className="description">
-          Get started by editing <code>pages/index.js</code>
+          This is the beginning of my digital garden
         </p>
 
         <div className="grid">
