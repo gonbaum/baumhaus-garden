@@ -1,0 +1,9 @@
+job:only:main:
+  script: echo 'job running in master'
+  only:
+    - main # The job will only be performed during an event on the master branch
+
+job:except:master:
+  script: echo 'job running in non main branch'
+  except:main:
+    - main # The job will only be performed during an event on the master branch
