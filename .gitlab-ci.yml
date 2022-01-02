@@ -3,7 +3,7 @@ job:only:main:
   only:
     - main # The job will only be performed during an event on the master branch
 
-job:except:master:
+job:except:main:
   script: echo 'job running in non main branch'
-  except:main:
+  except:
     - main # The job will only be performed during an event on the master branch
