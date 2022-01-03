@@ -1,5 +1,10 @@
 import Link from "next/link";
+import React from "react";
 
+/**
+ * Return a post element
+ * @return {React.ReactElement}
+ */
 export default function TheOrigin() {
   return (
     <>
@@ -38,7 +43,9 @@ export default function TheOrigin() {
           </a>
         </li>
       </ul>
-      <Link href="/posts/first-steps"><h3>👞 Next steps:</h3></Link>
+      <Link href="/posts/first-steps">
+        <h3>👞 Next steps:</h3>
+      </Link>
       <ul>
         <li>Containerize my Next.js app with Docker</li>
         <li>Deploy and run my Next.js app in Google Cloud Platform</li>

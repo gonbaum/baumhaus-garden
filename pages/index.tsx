@@ -1,6 +1,11 @@
-import Head from 'next/head'
-import Link from 'next/link'
+import Head from "next/head";
+import Link from "next/link";
+import React from "react";
 
+/**
+ * The landing page of the blog.
+ * @return {JSX.Element} The JSX Code for the Home Page
+ */
 export default function Home() {
   return (
     <div className="container">
@@ -11,7 +16,7 @@ export default function Home() {
 
       <main>
         <h1 className="title">
-          Read{' '}
+          Read{" "}
           <Link href="/posts/the-origin">
             <a>the origin!</a>
           </Link>
@@ -58,8 +63,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className="logo" />
+          Powered by <img src="/vercel.svg" alt="Vercel" className="logo" />
         </a>
       </footer>
 
@@ -209,5 +213,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }
