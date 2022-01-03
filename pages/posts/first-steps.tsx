@@ -1,5 +1,10 @@
 import Link from "next/link";
+import React from "react";
 
+/**
+ * Return a post element
+ * @return {React.ReactElement}
+ */
 export default function FirstSteps() {
   return (
     <>
