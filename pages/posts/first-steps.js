@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function FirstSteps() {
   return (
     <>
-      <h1>🪴 First Steps </h1>
+      <h1>🚀 First Steps </h1>
       <p>
         After succesfully created my Gitlab project, I've proceeded to
         containerize my app and setting up a Kubernetes cluster in GCP via
@@ -37,6 +37,11 @@ export default function FirstSteps() {
       <ul>
         <li></li>
       </ul>
+      <h2>
+        <Link href="/posts/third-part">
+          <a>Third part</a>
+        </Link>
+      </h2>
       <h2>
         <Link href="/posts/the-origin">
           <a>The origin</a>
