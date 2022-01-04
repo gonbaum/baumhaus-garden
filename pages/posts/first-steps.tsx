@@ -1,5 +1,7 @@
 import Link from "next/link";
 import React from "react";
+import Head from "next/head";
+import Layout from "../../components/layout";
 
 /**
  * Return a post element
@@ -7,7 +9,10 @@ import React from "react";
  */
 export default function FirstSteps() {
   return (
-    <>
+    <Layout>
+      <Head>
+        <title>First Steps</title>
+      </Head>
       <h1>🚀 First Steps </h1>
       <p>
         After succesfully created my Gitlab project, I've proceeded to
@@ -52,11 +57,6 @@ export default function FirstSteps() {
           <a>The origin</a>
         </Link>
       </h2>
-      <h2>
-        <Link href="/">
-          <a>Back to home</a>
-        </Link>
-      </h2>
-    </>
+    </Layout>
   );
 }
