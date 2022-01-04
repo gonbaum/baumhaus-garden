@@ -74,11 +74,6 @@ export default function FirstSteps() {
           <a>First steps</a>
         </Link>
       </h2>
-      <h2>
-        <Link href="/">
-          <a>Back to home</a>
-        </Link>
-      </h2>
     </Layout>
   );
 }
