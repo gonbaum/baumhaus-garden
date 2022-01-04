@@ -7,7 +7,7 @@ import utilStyles from "../styles/utils.module.css";
 
 interface LayoutProps {
   children: React.ReactNode;
-  home: boolean;
+  home?: boolean;
 }
 
 const name = "🌳 Gonzalo Garcia 🪴";
