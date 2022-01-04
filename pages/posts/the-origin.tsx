@@ -1,5 +1,7 @@
 import Link from "next/link";
 import React from "react";
+import Head from "next/head";
+import Layout from "../../components/layout";
 
 /**
  * Return a post element
@@ -7,7 +9,10 @@ import React from "react";
  */
 export default function TheOrigin() {
   return (
-    <>
+    <Layout>
+      <Head>
+        <title>The origin</title>
+      </Head>
       <h1>🪴 The origin </h1>
       <p>
         To kickstart this project, I've first created a repo in github and then
@@ -61,6 +66,6 @@ export default function TheOrigin() {
           <a>Back to home</a>
         </Link>
       </h2>
-    </>
+    </Layout>
   );
 }

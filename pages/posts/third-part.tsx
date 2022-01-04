@@ -1,5 +1,7 @@
 import Link from "next/link";
 import React from "react";
+import Head from "next/head";
+import Layout from "../../components/layout";
 
 /**
  * Return a post element
@@ -7,7 +9,10 @@ import React from "react";
  */
 export default function FirstSteps() {
   return (
-    <>
+    <Layout>
+      <Head>
+        <title>An impasse</title>
+      </Head>
       <h1>🍏 An impasse </h1>
       <p>
         When trying to follow some not so outdated guides to Gitlab/GCP, I've
@@ -74,6 +79,6 @@ export default function FirstSteps() {
           <a>Back to home</a>
         </Link>
       </h2>
-    </>
+    </Layout>
   );
 }
