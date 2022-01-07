@@ -7,6 +7,7 @@ import { parseISO, format } from "date-fns";
  * @return {string} Date string formatted
  */
 export default function Date({ dateString }: any) {
+  console.log(dateString);
   const date = parseISO(dateString);
   // TODO: Support other date format inputs
   return <time dateTime={dateString}>{format(date, "LLLL d, yyyy")}</time>;

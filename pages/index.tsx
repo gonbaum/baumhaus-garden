@@ -2,7 +2,8 @@ import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 import Layout, { siteTitle } from "../components/layout";
-import { getSortedPostsData } from "../lib/post";
+// import { getSortedPostsData } from "../lib/post";
+import { getAllPostsForHome } from "../lib/api";
 import utilStyles from "../styles/utils.module.css";
 import Date from "../components/date";
 
@@ -10,12 +11,17 @@ import Date from "../components/date";
  *
  * @return {JSON} Posts data as static props
  */
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+export async function getStaticProps({ preview = false }) {
+  /*  const allPostsData = getSortedPostsData();
   return {
     props: {
       allPostsData,
     },
+  }; */
+
+  const allPostsData = (await getAllPostsForHome(preview)) ?? [];
+  return {
+    props: { preview, allPostsData },
   };
 }
 
@@ -45,9 +51,9 @@ export default function Home({ allPostsData }: any) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }: any) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
+          {allPostsData.map(({ sys, title, date }: any) => (
+            <li className={utilStyles.listItem} key={sys.id}>
+              <Link href={`/posts/${sys.id}`}>
                 <a>{title}</a>
               </Link>
               <br />
