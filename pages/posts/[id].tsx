@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../../components/layout";
-import { getAllPostIds, getPostData } from "../../lib/post";
+import { getPost, getAllPosts } from "../../lib/contentful/api";
 import Head from "next/head";
 import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
@@ -30,7 +30,13 @@ export default function Post({ postData }: any) {
  * @return {JSON}  Return a list of possible value for id
  */
 export async function getStaticPaths() {
-  const paths = getAllPostIds();
+  const posts = await getAllPosts(false);
+
+  const paths = posts.map((post: any) => ({
+    params: {
+      id: post.sys.id.toString(),
+    },
+  }));
   return {
     paths,
     fallback: false,
@@ -42,8 +48,8 @@ export async function getStaticPaths() {
  * @param {JSON} props
  * @return {JSON} necessary data for the blog post using params.id
  */
-export async function getStaticProps({ params }: any) {
-  const postData = await getPostData(params.id);
+export async function getStaticProps({ params: { id } }: any) {
+  const { postData }: any = await getPost(false, id);
   return {
     props: {
       postData,
