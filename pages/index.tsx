@@ -2,8 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 import Layout, { siteTitle } from "../components/layout";
-// import { getSortedPostsData } from "../lib/post";
-import { getAllPostsForHome } from "../lib/api";
+import { getAllPosts } from "../lib/contentful/api";
 import utilStyles from "../styles/utils.module.css";
 import Date from "../components/date";
 
@@ -12,14 +11,7 @@ import Date from "../components/date";
  * @return {JSON} Posts data as static props
  */
 export async function getStaticProps({ preview = false }) {
-  /*  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  }; */
-
-  const allPostsData = (await getAllPostsForHome(preview)) ?? [];
+  const allPostsData = (await getAllPosts(preview)) ?? [];
   return {
     props: { preview, allPostsData },
   };

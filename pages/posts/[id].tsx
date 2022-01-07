@@ -1,10 +1,10 @@
 import React from "react";
 import Layout from "../../components/layout";
-// import { getAllPostIds, getPostData } from "../../lib/post";
-import { getPost, getAllPostsForHome } from "../../lib/api";
+import { getPost, getAllPosts } from "../../lib/contentful/api";
 import Head from "next/head";
 import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
+
 /**
  *  @param {JSON} post data
  * @return {JSX.Element} The JSX Code a Post Page
@@ -30,14 +30,13 @@ export default function Post({ postData }: any) {
  * @return {JSON}  Return a list of possible value for id
  */
 export async function getStaticPaths() {
-  const posts = await getAllPostsForHome(false);
+  const posts = await getAllPosts(false);
 
   const paths = posts.map((post: any) => ({
     params: {
       id: post.sys.id.toString(),
     },
   }));
-  console.log(paths);
   return {
     paths,
     fallback: false,
