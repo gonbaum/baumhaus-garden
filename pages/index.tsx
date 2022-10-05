@@ -29,21 +29,14 @@ export default function Home({ allPostsData }: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="utilStyles.headingMd">
-        <h1 className="title">
-          Read{" "}
-          <Link href="/posts/the-origin">
-            <a>the origin!</a>
-          </Link>
-        </h1>
-
         <p className="description">
-          This is the beginning of my digital garden
+          Humans are meant to write more than just code
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <h2 className={utilStyles.headingLg}>Posts</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ sys, title, date }: any) => (
+          {allPostsData?.map(({ sys, title, date }: any) => (
             <li className={utilStyles.listItem} key={sys.id}>
               <Link href={`/posts/${sys.id}`}>
                 <a>{title}</a>

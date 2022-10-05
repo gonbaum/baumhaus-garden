@@ -10,8 +10,8 @@ interface LayoutProps {
   home?: boolean;
 }
 
-const name = "🌳 Gonzalo Garcia 🪴";
-export const siteTitle = "My Digital Garden";
+const name = "Poietic explorations";
+export const siteTitle = "Poietic explorations";
 
 /**
  *
@@ -33,18 +33,26 @@ export default function Layout({ children, home }: LayoutProps) {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Tinos&display=swap"
+          rel="stylesheet"
+        ></link>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@400;700&family=Lusitana:wght@400;700&family=Tinos&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
       <header className={styles.header}>
         {home ? (
           <>
-            <Image
+            {/* <Image
               priority
               src="/images/profile.jpeg"
               className={utilStyles.borderCircle}
               height={144}
               width={144}
               alt={name}
-            />
+            /> */}
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
           </>
         ) : (
