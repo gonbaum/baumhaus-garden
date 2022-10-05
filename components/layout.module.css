@@ -4,14 +4,14 @@
   margin: 3rem auto 6rem;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   justify-content: flex-start;
 }
 
 .header {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .backToHome {
