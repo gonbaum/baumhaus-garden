@@ -11,7 +11,7 @@ interface LayoutProps {
 }
 
 const name = "Poietic explorations";
-export const siteTitle = "My Digital Garden";
+export const siteTitle = "Poietic explorations";
 
 /**
  *
@@ -45,14 +45,14 @@ export default function Layout({ children, home }: LayoutProps) {
       <header className={styles.header}>
         {home ? (
           <>
-            <Image
+            {/* <Image
               priority
               src="/images/profile.jpeg"
               className={utilStyles.borderCircle}
               height={144}
               width={144}
               alt={name}
-            />
+            /> */}
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
           </>
         ) : (
